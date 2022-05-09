@@ -15,12 +15,12 @@ const Planets = ({ setUrl, data, next, previous }) => {
             <div key={index}>
               <div>
                 <h1>
-                  {entry.name}
+                  Name: {entry.name}
                 </h1>
-                <p>{entry.climate}</p>
-                <p>{entry.gravity}</p>
-                <p>{entry.population}</p>
-                <p>{entry.terrain}</p>
+                <p>Climate: {entry.climate}</p>
+                <p>Gravity: {entry.gravity}</p>
+                <p>Population: {entry.population}</p>
+                <p>Terrain: {entry.terrain}</p>
               </div>
             </div>
           )

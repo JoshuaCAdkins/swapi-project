@@ -16,12 +16,12 @@ const People = ({ setUrl, data, next, previous }) => {
             <div key={index}>
               <div>
                 <h1>
-                  {entry.name}
+                  Title: {entry.name}
                 </h1>
-                <p>{entry.birth_year}</p>
-                <p>{entry.gender}</p>
-                <p>{entry.hair_color}</p>
-                <p>{entry.eye_color}</p>
+                <p>Birth Year: {entry.birth_year}</p>
+                <p>Gender: {entry.gender}</p>
+                <p>Hair Color: {entry.hair_color}</p>
+                <p>Eye: Color: {entry.eye_color}</p>
               </div>
             </div>
           )

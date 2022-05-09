@@ -1,8 +1,8 @@
 
-const Starships = ({ data, next, previous, setData }) => {
+const Starships = ({ setUrl, data, next, previous }) => {
 
   const handleOnClick = (url) => {
-    window.location.href = url;
+    setUrl(url);
   }
 
   return (

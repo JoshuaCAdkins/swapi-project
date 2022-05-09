@@ -8,36 +8,41 @@ import Films from './components/Films.js';
 import Species from './components/Species.js';
 import Starships from './components/Starships.js';
 import starBackground from './resources/starBackground.jpg';
-import axios from "axios";
 
 const App = () => {
 
   const [ next, setNext ] = useState();
   const [ previous, setPrevious ] = useState();
   const [ data, setData ] = useState([]);
-  const [ url, setUrl ] = useState("https://swapi.dev/api/");
+  const [ url, setUrl ] = useState();
 
   
 
-  useEffect((url) => {
-    axios.get(url).then(res => {
-      setData(res.data.results)
-    })
-    
+  useEffect(() => {
+    fetch(url)
+        .then( res => res.json())
+        .then( data => {
+          setData(data.results)
+          setNext(data.next)
+          setPrevious(data.previous)
+        })
+        .catch((err) => {
+            console.log(err);
+        });
   }, [url, previous, next]);
 
   return (
     <>
       <Router>
-            <Navbar setData={setData} setUrl={setUrl} setNext={setNext} setPrevious={setPrevious} />
+            <Navbar setUrl={setUrl} />
             <div style={{ backgroundImage: `url(${starBackground})`, height: '100vh', backgroundSize: 'cover'}}>
               <Routes>
                 <Route path='/' element={<Home />}/>
-                <Route path='/people' element={<People data={data} setData={setData} next={next} previous={previous} />} />
-                <Route path='/planets' element={<Planets data={data} setData={setData} next={next} previous={previous} />} />
-                <Route path='/films' element={<Films data={data} setData={setData} next={next} previous={previous} />} />
-                <Route path='/species' element={<Species data={data} setData={setData} next={next} previous={previous} />} />
-                <Route path='/starships' element={<Starships data={data} setData={setData} next={next} previous={previous} />} />
+                <Route path='/people' element={<People data={data} setUrl={setUrl} next={next} previous={previous} />} />
+                <Route path='/planets' element={<Planets data={data} setUrl={setUrl} next={next} previous={previous} />} />
+                <Route path='/films' element={<Films data={data} setUrl={setUrl} next={next} previous={previous} />} />
+                <Route path='/species' element={<Species data={data} setUrl={setUrl} next={next} previous={previous} />} />
+                <Route path='/starships' element={<Starships data={data} setUrl={setUrl} next={next} previous={previous} />} />
               </Routes>
             </div>
       </Router>

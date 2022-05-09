@@ -1,10 +1,10 @@
 import React from 'react'
 
 
-const Planets = ({ data, next, previous, setData }) => {
+const Planets = ({ setUrl, data, next, previous }) => {
 
   const handleOnClick = (url) => {
-
+    setUrl(url);
   }
   
   return (

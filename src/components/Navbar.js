@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import logo from '../resources/death-star-icon.png';
 
 
-const Navbar = ({  setUrl, setNext, setPrevious } = {} ) => {
+const Navbar = ({  setUrl } = {} ) => {
 
 
   const handleOnClick =  (navItem) => {

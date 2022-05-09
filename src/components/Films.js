@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const Films = ({ data, next, previous, setData }) => {
+const Films = ({ setUrl, data, next, previous  }) => {
 
   const handleOnClick = (url) => {
-    window.location.href = url;
+    setUrl(url);
   }
 
   return (

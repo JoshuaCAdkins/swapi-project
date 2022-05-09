@@ -2,15 +2,10 @@ import React from 'react'
 
 
 
-const People = ({ data, next, previous, setData }) => {
+const People = ({ setUrl, data, next, previous }) => {
 
   const handleOnClick = (url) => {
-    if(previous) {
-
-    } 
-    if(next) {
-      
-    }
+    setUrl(url)
   }
 
   return (

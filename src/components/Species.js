@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Species = ({ data, next, previous, setData }) => {
+const Species = ({ setUrl, data, next, previous }) => {
 
   const handleOnClick = (url) => {
-    window.location.href = url;
+    setUrl(url);
   }
 
   return (

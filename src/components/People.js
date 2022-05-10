@@ -10,25 +10,25 @@ const People = ({ setUrl, data, next, previous }) => {
 
   return (
     <div className='container'>
-      <div className='row'>
+      <div className='row row-cols-auto gy-4 py-3 justify-content-center'>
         {data.map((entry, index) => {
           return (
-            <div key={index}>
-              <div>
-                <h1>
-                  Title: {entry.name}
-                </h1>
-                <p>Birth Year: {entry.birth_year}</p>
-                <p>Gender: {entry.gender}</p>
-                <p>Hair Color: {entry.hair_color}</p>
-                <p>Eye: Color: {entry.eye_color}</p>
+              <div key={index} className='col p-2 bg-dark align-items-center mx-3'>
+                <h2 className='text-warning'>
+                  Name: {entry.name}
+                </h2>
+                <p className='text-light'>Birth Year: {entry.birth_year}</p>
+                <p className='text-light'>Gender: {entry.gender}</p>
+                <p className='text-light'>Hair Color: {entry.hair_color}</p>
+                <p className='text-light'>Eye: Color: {entry.eye_color}</p>
               </div>
-            </div>
           )
         })}
-      { previous ? <button onClick={() => handleOnClick(previous)} >Previous</button> : <button disabled>Previous</button>}
-      { next ? <button onClick={() => handleOnClick(next)}>Next</button> : <button disabled>Next</button> }
-      </div>   
+      </div>
+      <div className='d-flex justify-content-between'>
+        { previous ? <button type='button' className='btn btn-warning btn-lg' onClick={() => handleOnClick(previous)} >Previous</button> : <button className='btn btn-outline-warning btn-lg' disabled>Previous</button>}
+        { next ? <button type='button' className='btn btn-warning btn-lg' onClick={() => handleOnClick(next)}>Next</button> : <button className='btn btn-outline-warning btn-lg' disabled>Next</button> }
+      </div>
     </div>
   )
 }

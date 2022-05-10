@@ -29,11 +29,11 @@ const Navbar = ({  setUrl } = {} ) => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid collapse navbar-collapse" style={{display: 'inline-block', justifyContent: 'center'}}>
           <ul className='navbar-nav'>
-            <li className='nav-item fs-2'><Link className='nav-link' to='/people' onClick={() => handleOnClick('people')} >People</Link></li>
-            <li className='nav-item fs-2'><Link className='nav-link' to='/planets' onClick={() => handleOnClick('planets')} >Planets</Link></li>
-            <li className='nav-item fs-2'><Link className='nav-link' to='/films' onClick={() => handleOnClick('films')} >Films</Link></li>
-            <li className='nav-item fs-2'><Link className='nav-link' to='/species' onClick={() => handleOnClick('species')} >Species</Link></li>
-            <li className='nav-item fs-2'><Link className='nav-link' to='/starships' onClick={() => handleOnClick('starships')} >Starships</Link></li>
+            <li className='nav-item fs-2 px-2'><Link className='nav-link' to='/people' onClick={() => handleOnClick('people')} >People</Link></li>
+            <li className='nav-item fs-2 px-2'><Link className='nav-link' to='/planets' onClick={() => handleOnClick('planets')} >Planets</Link></li>
+            <li className='nav-item fs-2 px-2'><Link className='nav-link' to='/films' onClick={() => handleOnClick('films')} >Films</Link></li>
+            <li className='nav-item fs-2 px-2'><Link className='nav-link' to='/species' onClick={() => handleOnClick('species')} >Species</Link></li>
+            <li className='nav-item fs-2 px-2'><Link className='nav-link' to='/starships' onClick={() => handleOnClick('starships')} >Starships</Link></li>
           </ul>
         </div>  
       </nav>

@@ -16,7 +16,6 @@ const App = () => {
   const [ data, setData ] = useState([]);
   const [ url, setUrl ] = useState();
 
-  
 
   useEffect(() => {
     fetch(url)
@@ -35,7 +34,7 @@ const App = () => {
     <>
       <Router>
             <Navbar setUrl={setUrl} />
-            <div style={{ backgroundImage: `url(${starBackground})`, height: '100vh', backgroundSize: 'cover'}}>
+            <div style={{ backgroundImage: `url(${starBackground})`, height: '100vh', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
               <Routes>
                 <Route path='/' element={<Home />}/>
                 <Route path='/people' element={<People data={data} setUrl={setUrl} next={next} previous={previous} />} />

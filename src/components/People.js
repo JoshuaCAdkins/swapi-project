@@ -25,7 +25,7 @@ const People = ({ setUrl, data, next, previous }) => {
           )
         })}
       </div>
-      <div className='d-flex justify-content-between'>
+      <div className='d-flex justify-content-between py-2'>
         { previous ? <button type='button' className='btn btn-warning btn-lg' onClick={() => handleOnClick(previous)} >Previous</button> : <button className='btn btn-outline-warning btn-lg' disabled>Previous</button>}
         { next ? <button type='button' className='btn btn-warning btn-lg' onClick={() => handleOnClick(next)}>Next</button> : <button className='btn btn-outline-warning btn-lg' disabled>Next</button> }
       </div>

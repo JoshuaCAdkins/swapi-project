@@ -34,7 +34,7 @@ const App = () => {
     <>
       <Router>
             <Navbar setUrl={setUrl} />
-            <div style={{ backgroundImage: `url(${starBackground})`, height: '100vh', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
+            <div style={{ backgroundImage: `url(${starBackground})`, minHeight: '80vh', maxHeight: '100%', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
               <Routes>
                 <Route path='/' element={<Home />}/>
                 <Route path='/people' element={<People data={data} setUrl={setUrl} next={next} previous={previous} />} />
